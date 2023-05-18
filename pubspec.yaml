@@ -1,0 +1,36 @@
+name: ti_ospito_io_app_flutter
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=2.19.6 <3.0.0'
+
+dependencies:
+  cupertino_icons: ^1.0.2
+  animated_bottom_navigation_bar: ^1.2.0
+  auto_size_text: ^3.0.0
+  flutter:
+    sdk: flutter
+  persistent_bottom_nav_bar: ^5.0.2
+  lottie: ^2.3.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/safeplace.json
+  fonts:
+    - family: LeagueSpartan
+      fonts:
+        - asset: fonts/league_spartanreg.ttf
+    - family: Poppins
+      fonts:
+        - asset: fonts/poppins_regular.ttf
+    - family: PoppinsExtrabold
+      fonts:
+        - asset: fonts/Poppins-ExtraBold.ttf
