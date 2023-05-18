@@ -82,6 +82,8 @@ class HelpMePage extends StatelessWidget {
                   const Icon(CupertinoIcons.film),
                 ],
               ),
+              SizedBox(height: 20,)
+              
             ],
           ),
         ),
