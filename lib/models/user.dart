@@ -5,6 +5,8 @@ class User {
   final double long;
   final String address;
   final int freePlace;
+  final String urlImage;
+  final String telephone;
 
   User(
       {required this.name,
@@ -12,5 +14,7 @@ class User {
       required this.address,
       required this.freePlace,
       required this.lat,
-      required this.long});
+      required this.long,
+      required this.urlImage,
+      required this.telephone});
 }
