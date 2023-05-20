@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:lottie/lottie.dart';
+import 'package:ti_ospito_io_app_flutter/ui/pages/detail_extra_user.dart';
 import 'package:ti_ospito_io_app_flutter/utils/fake_data.dart';
 
 class HelpMePage extends StatelessWidget {
@@ -91,11 +92,14 @@ class HelpMePage extends StatelessWidget {
                 shrinkWrap: true,
                 itemCount: getFakeData.length,
                 itemBuilder:(context, index) {
-                  return ListTile(
-                    trailing: Icon(CupertinoIcons.chevron_right),
-                    leading: CircleAvatar(backgroundImage: NetworkImage(getFakeData[index].urlImage)),
-                    title: Text('${getFakeData[index].name} ${getFakeData[index].surname} ha ${getFakeData[index].freePlace} posti liberi', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),),
-                    subtitle: Text(getFakeData[index].address),
+                  return GestureDetector(
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder:(context) => DetailExtraUserPage(user: getFakeData[index],),)),
+                    child: ListTile(
+                      trailing: Icon(CupertinoIcons.chevron_right),
+                      leading: CircleAvatar(backgroundImage: NetworkImage(getFakeData[index].urlImage)),
+                      title: Text('${getFakeData[index].name} ${getFakeData[index].surname} ha ${getFakeData[index].freePlace} posti liberi', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),),
+                      subtitle: Text(getFakeData[index].address),
+                    ),
                   );
               },),
               SizedBox(height: 20,)
