@@ -1,15 +1,28 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ti_ospito_io_app_flutter/models/user.dart';
+import 'package:url_launcher/url_launcher_string.dart' as UrlLauncher;
 
 class DetailExtraUserPage extends StatefulWidget {
-  DetailExtraUserPage({super.key, required this.user});
-  User user;
+  const DetailExtraUserPage({super.key, required this.user});
+  final User user;
   @override
   State<DetailExtraUserPage> createState() => _DetailExtraUserPageState();
 }
 
 class _DetailExtraUserPageState extends State<DetailExtraUserPage> {
+  String url() {
+    if (Platform.isAndroid) {
+      // add the [https]
+      return "https://api.whatsapp.com/send?phone=${widget.user.telephone}=${Uri.parse("ciao!")}";
+    } else {
+      // add the [https]
+      return "https://api.whatsapp.com/send?phone=${widget.user.telephone}=${Uri.parse("ciao!")}"; // new line
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,21 +45,24 @@ class _DetailExtraUserPageState extends State<DetailExtraUserPage> {
                 SizedBox(
                   height: 10,
                 ),
-                
-                   CircleAvatar(
-                    radius: 60,
-                    backgroundImage: NetworkImage(widget.user.urlImage),
-                  ),
-                  
+                CircleAvatar(
+                  radius: 60,
+                  backgroundImage: NetworkImage(widget.user.urlImage),
+                ),
                 SizedBox(
                   height: 10,
                 ),
-                Text('${widget.user.name} ${widget.user.surname}', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
+                Text(
+                  '${widget.user.name} ${widget.user.surname}',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                ),
                 SizedBox(
                   height: 30,
                 ),
                 Container(
-                  decoration: BoxDecoration(color: Color.fromARGB(124, 213, 232, 237), borderRadius: BorderRadius.circular(20)),
+                  decoration: BoxDecoration(
+                      color: Color.fromARGB(124, 213, 232, 237),
+                      borderRadius: BorderRadius.circular(20)),
                   padding: EdgeInsets.all(20),
                   child: Column(children: [
                     Row(
@@ -74,43 +90,76 @@ class _DetailExtraUserPageState extends State<DetailExtraUserPage> {
                     )
                   ]),
                 ),
-                const SizedBox(height: 50,),
-                Container(
-                  decoration: BoxDecoration(color: Colors.green, borderRadius: BorderRadius.circular(8)),
-                  height: 60,
-                  width: MediaQuery.of(context).size.width,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Chiama!',
-                        style: TextStyle(color: Colors.white, fontFamily: 'PoppinsExtraBold'),
-                      ),
-                      SizedBox(width: 8,),
-                      Icon(CupertinoIcons.phone, color: Colors.white,),
-                    ],
+                const SizedBox(
+                  height: 50,
+                ),
+                GestureDetector(
+                  onTap: () => UrlLauncher.launchUrlString(
+                      'tel://+39${widget.user.telephone}'),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(8)),
+                    height: 60,
+                    width: MediaQuery.of(context).size.width,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Chiama!',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'PoppinsExtraBold'),
+                        ),
+                        SizedBox(
+                          width: 8,
+                        ),
+                        Icon(
+                          CupertinoIcons.phone,
+                          color: Colors.white,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-                SizedBox(height: 10,),
-                Container(
-                  decoration: BoxDecoration(color: Color.fromARGB(255, 54, 133, 56), borderRadius: BorderRadius.circular(8)),
-                  height: 60,
-                  width: MediaQuery.of(context).size.width,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Contatta!',
-                        style: TextStyle(color: Colors.white, fontFamily: 'PoppinsExtraBold'),
-                      ),
-                      SizedBox(width: 8,),
-                      Icon(Icons.telegram, color: Colors.white,),
-                    ],
+                SizedBox(
+                  height: 10,
+                ),
+                GestureDetector(
+                  onTap: () => UrlLauncher.launchUrlString(url()),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 54, 133, 56),
+                        borderRadius: BorderRadius.circular(8)),
+                    height: 60,
+                    width: MediaQuery.of(context).size.width,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Contatta!',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'PoppinsExtraBold'),
+                        ),
+                        SizedBox(
+                          width: 8,
+                        ),
+                        Icon(
+                          Icons.telegram,
+                          color: Colors.white,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Container(
-                  decoration: BoxDecoration(color: Colors.blue, borderRadius: BorderRadius.circular(8)),
+                  decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(8)),
                   height: 60,
                   width: MediaQuery.of(context).size.width,
                   child: Row(
@@ -118,14 +167,23 @@ class _DetailExtraUserPageState extends State<DetailExtraUserPage> {
                     children: [
                       Text(
                         'Raggiungilo!',
-                        style: TextStyle(color: Colors.white, fontFamily: 'PoppinsExtraBold'),
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'PoppinsExtraBold'),
                       ),
-                      SizedBox(width: 8,),
-                      Icon(CupertinoIcons.location_circle, color: Colors.white,),
+                      SizedBox(
+                        width: 8,
+                      ),
+                      Icon(
+                        CupertinoIcons.location_circle,
+                        color: Colors.white,
+                      ),
                     ],
                   ),
                 ),
-                SizedBox(height: 10,)
+                SizedBox(
+                  height: 10,
+                )
               ])),
     );
   }

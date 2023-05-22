@@ -22,7 +22,10 @@ class HelpMePage extends StatelessWidget {
               ),
               Row(
                 children: [
-                  IconButton(icon: const Icon(CupertinoIcons.arrow_left), onPressed: () => Navigator.pop(context),),
+                  IconButton(
+                    icon: const Icon(CupertinoIcons.arrow_left),
+                    onPressed: () => Navigator.pop(context),
+                  ),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 12),
                     child: Text(
@@ -84,25 +87,42 @@ class HelpMePage extends StatelessWidget {
                   const Icon(Icons.filter_list),
                 ],
               ),
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
               ListView.separated(
                 padding: EdgeInsets.only(bottom: 20),
                 separatorBuilder: (context, index) => const Divider(),
                 primary: false,
                 shrinkWrap: true,
                 itemCount: getFakeData.length,
-                itemBuilder:(context, index) {
+                itemBuilder: (context, index) {
                   return GestureDetector(
-                    onTap: () => Navigator.push(context, MaterialPageRoute(builder:(context) => DetailExtraUserPage(user: getFakeData[index],),)),
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DetailExtraUserPage(
+                            user: getFakeData[index],
+                          ),
+                        )),
                     child: ListTile(
                       trailing: Icon(CupertinoIcons.chevron_right),
-                      leading: CircleAvatar(backgroundImage: NetworkImage(getFakeData[index].urlImage)),
-                      title: Text('${getFakeData[index].name} ${getFakeData[index].surname} ha ${getFakeData[index].freePlace} posti liberi', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),),
+                      leading: CircleAvatar(
+                          backgroundImage:
+                              NetworkImage(getFakeData[index].urlImage)),
+                      title: Text(
+                        '${getFakeData[index].name} ${getFakeData[index].surname} ha ${getFakeData[index].freePlace} posti liberi',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 16),
+                      ),
                       subtitle: Text(getFakeData[index].address),
                     ),
                   );
-              },),
-              SizedBox(height: 20,)
+                },
+              ),
+              SizedBox(
+                height: 20,
+              )
             ],
           ),
         ),

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:ti_ospito_io_app_flutter/ui/pages/give_presents_page.dart';
 import 'package:ti_ospito_io_app_flutter/ui/pages/help_me_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -169,38 +170,45 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          Container(
-            decoration: BoxDecoration(
-                color: Color.fromARGB(255, 20, 68, 158),
-                borderRadius: BorderRadius.circular(10)),
-            padding: const EdgeInsets.all(12),
-            child: Column(
-              children: [
-                Text(
-                  "Dona i tuoi oggetti!",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'PoppinsExtraBold',
-                      fontSize: 18),
-                ),
-                SizedBox(
-                  height: 50,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Donali qui!',
-                      style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                    ),
-                    Icon(
-                      CupertinoIcons.gift,
-                      color: Colors.white,
-                    )
-                  ],
-                )
-              ],
+          GestureDetector(
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => GivePresentsPage(),
+                )),
+            child: Container(
+              decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 20, 68, 158),
+                  borderRadius: BorderRadius.circular(10)),
+              padding: const EdgeInsets.all(12),
+              child: Column(
+                children: [
+                  Text(
+                    "Dona i tuoi oggetti!",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'PoppinsExtraBold',
+                        fontSize: 18),
+                  ),
+                  SizedBox(
+                    height: 50,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Donali qui!',
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                      Icon(
+                        CupertinoIcons.gift,
+                        color: Colors.white,
+                      )
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         ],
