@@ -26,6 +26,7 @@ flutter:
   assets:
     - assets/safeplace.json
     - assets/gift.json
+    - assets/warning.json
   fonts:
     - family: LeagueSpartan
       fonts:

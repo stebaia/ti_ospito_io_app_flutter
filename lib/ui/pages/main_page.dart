@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:ti_ospito_io_app_flutter/ui/pages/dangerous_zone_page.dart';
 import 'package:ti_ospito_io_app_flutter/ui/pages/give_presents_page.dart';
 import 'package:ti_ospito_io_app_flutter/ui/pages/help_me_page.dart';
 
@@ -102,38 +103,45 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          Container(
-            decoration: BoxDecoration(
-                color: Color.fromARGB(255, 158, 59, 20),
-                borderRadius: BorderRadius.circular(10)),
-            padding: const EdgeInsets.all(12),
-            child: Column(
-              children: [
-                Text(
-                  "Vuoi segnalare una zona pericolosa?",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'PoppinsExtraBold',
-                      fontSize: 18),
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Segnalala qui!',
-                      style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                    ),
-                    Icon(
-                      Icons.dangerous,
-                      color: Colors.white,
-                    )
-                  ],
-                )
-              ],
+          GestureDetector(
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DangerousZonePage(),
+                )),
+            child: Container(
+              decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 158, 59, 20),
+                  borderRadius: BorderRadius.circular(10)),
+              padding: const EdgeInsets.all(12),
+              child: Column(
+                children: [
+                  Text(
+                    "Vuoi segnalare una zona pericolosa?",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'PoppinsExtraBold',
+                        fontSize: 18),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Segnalala qui!',
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                      Icon(
+                        Icons.dangerous,
+                        color: Colors.white,
+                      )
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
           Container(
