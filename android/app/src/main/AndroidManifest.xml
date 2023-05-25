@@ -16,6 +16,8 @@
         android:label="ti_ospito_io_app_flutter"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyC2z-1szIJqgE6pdcWblK4H2WpxRAU6gF0"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

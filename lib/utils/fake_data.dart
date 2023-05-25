@@ -70,3 +70,31 @@ List<Place> getPlaceFakeData = [
   Place(name: 'MARR Sfera', address: 'Viale Pennabilli, 1, 47838 Riccione RN'),
   Place(name: 'Acquadolce', address: 'Viale IV Novembre, 570, 47521 Cesena FC'),
 ];
+
+List<Place> getFakePlaceOspital = [
+  Place(
+      name: 'Ospedale M. Bufalini Cesena',
+      address: 'Viale Giovanni Ghirotti, 286, 47521 Cesena FC',
+      lat: 44.1342522,
+      long: 12.2574514),
+  Place(
+      name: 'Ospedale Santa Colomba',
+      address: 'Corso Giulio Perticari, 119, 47039 Savignano sul Rubicone FC',
+      lat: 44.1235832,
+      long: 12.1580953),
+  Place(
+      name: 'Ospedale "G.Marconi" di Cesenatico',
+      address: 'Viale C. Abba, 102, 47042 Cesenatico FC',
+      lat: 44.1235832,
+      long: 12.1580953),
+  Place(
+      name: 'Ospedale San Giorgio Di Cervia',
+      address: 'Via Tommaso Guerra, Via Ospedale, 17, 48015 Cervia RA',
+      lat: 44.1779785,
+      long: 11.8639369),
+  Place(
+      name: 'Ospedale "Franchini" di Santarcangelo di Romagna',
+      address: 'Via Pedrignone, 3, 47822 Santarcangelo di Romagna RN',
+      lat: 44.1235417,
+      long: 12.1947816)
+];

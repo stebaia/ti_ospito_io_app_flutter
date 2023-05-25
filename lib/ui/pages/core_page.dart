@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:ti_ospito_io_app_flutter/ui/components/bottom_nav_items.dart';
 import 'package:ti_ospito_io_app_flutter/ui/pages/main_page.dart';
+import 'package:ti_ospito_io_app_flutter/ui/pages/maps_point_page.dart';
 
 class CorePage extends StatefulWidget {
   const CorePage({super.key});
@@ -17,7 +18,7 @@ class _CorePageState extends State<CorePage> {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static List<Widget> _widgetOptions = <Widget>[
     HomePage(),
-    HomePage(),
+    MapsPointPage(),
     HomePage(),
     HomePage()
   ];
@@ -32,11 +33,7 @@ class _CorePageState extends State<CorePage> {
   Widget build(BuildContext context) {
     BuildContext testContext;
     return Scaffold(
-      body: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          child: Container(
-              padding: const EdgeInsets.all(24),
-              child: _widgetOptions.elementAt(_selectedIndex))),
+      body: Container(child: _widgetOptions.elementAt(_selectedIndex)),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.red,
@@ -66,7 +63,7 @@ class _CorePageState extends State<CorePage> {
                               ? Colors.black
                               : Color.fromARGB(255, 104, 103, 103),
                         ),
-                        onPressed: () => _onItemTapped(0))),
+                        onPressed: () => _onItemTapped(1))),
                 SizedBox(width: 40), // The dummy child
                 Expanded(
                     child: IconButton(

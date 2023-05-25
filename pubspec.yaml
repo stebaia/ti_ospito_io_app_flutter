@@ -15,6 +15,7 @@ dependencies:
   persistent_bottom_nav_bar: ^5.0.2
   lottie: ^2.3.2
   url_launcher: ^6.1.11
+  google_maps_flutter: ^2.2.8
 
 dev_dependencies:
   flutter_test:
@@ -27,6 +28,7 @@ flutter:
     - assets/safeplace.json
     - assets/gift.json
     - assets/warning.json
+    - assets/hospital.json
   fonts:
     - family: LeagueSpartan
       fonts:
