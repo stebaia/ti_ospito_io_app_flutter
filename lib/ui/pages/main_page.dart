@@ -6,6 +6,7 @@ import 'package:ti_ospito_io_app_flutter/ui/pages/dangerous_zone_page.dart';
 import 'package:ti_ospito_io_app_flutter/ui/pages/give_a_bed_page.dart';
 import 'package:ti_ospito_io_app_flutter/ui/pages/give_presents_page.dart';
 import 'package:ti_ospito_io_app_flutter/ui/pages/help_me_page.dart';
+import 'package:ti_ospito_io_app_flutter/ui/pages/sos_volontari_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -196,7 +197,7 @@ class _HomePageState extends State<HomePage> {
                 onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => GivePresentsPage(),
+                      builder: (context) => SosVolontariPage(),
                     )),
                 child: Container(
                   decoration: BoxDecoration(
@@ -206,7 +207,7 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     children: [
                       Text(
-                        "Dona i tuoi oggetti!",
+                        "Sei un volontario?",
                         style: TextStyle(
                             color: Colors.white,
                             fontFamily: 'PoppinsExtraBold',
@@ -219,14 +220,15 @@ class _HomePageState extends State<HomePage> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Donali qui!',
+                            'Vieni a aiutare!',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
                           ),
-                          Icon(
-                            CupertinoIcons.gift,
-                            color: Colors.white,
+                          Image.asset(
+                            'assets/lifesaver.png',
+                            width: 24,
+                            height: 24,
                           )
                         ],
                       )

@@ -29,6 +29,7 @@ flutter:
     - assets/gift.json
     - assets/warning.json
     - assets/hospital.json
+    - assets/lifesaver.png
   fonts:
     - family: LeagueSpartan
       fonts:

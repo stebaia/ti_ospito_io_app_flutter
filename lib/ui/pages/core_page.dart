@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:ti_ospito_io_app_flutter/ui/components/bottom_nav_items.dart';
+import 'package:ti_ospito_io_app_flutter/ui/pages/give_presents_page.dart';
 import 'package:ti_ospito_io_app_flutter/ui/pages/main_page.dart';
 import 'package:ti_ospito_io_app_flutter/ui/pages/maps_point_page.dart';
 
@@ -19,7 +20,7 @@ class _CorePageState extends State<CorePage> {
   static List<Widget> _widgetOptions = <Widget>[
     HomePage(),
     MapsPointPage(),
-    HomePage(),
+    GivePresentsPage(),
     HomePage()
   ];
 
@@ -34,11 +35,6 @@ class _CorePageState extends State<CorePage> {
     BuildContext testContext;
     return Scaffold(
       body: Container(child: _widgetOptions.elementAt(_selectedIndex)),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.red,
-          child: Icon(Icons.sos, color: Colors.white),
-          onPressed: () {}),
       bottomNavigationBar: BottomAppBar(
           shape: CircularNotchedRectangle(),
           child: Container(
@@ -64,16 +60,15 @@ class _CorePageState extends State<CorePage> {
                               : Color.fromARGB(255, 104, 103, 103),
                         ),
                         onPressed: () => _onItemTapped(1))),
-                SizedBox(width: 40), // The dummy child
                 Expanded(
                     child: IconButton(
                         icon: Icon(
-                          CupertinoIcons.bubble_left,
+                          CupertinoIcons.gift,
                           color: _selectedIndex == 2
                               ? Colors.black
                               : Color.fromARGB(255, 104, 103, 103),
                         ),
-                        onPressed: () => _onItemTapped(0))),
+                        onPressed: () => _onItemTapped(2))),
                 Expanded(
                     child: IconButton(
                         icon: Icon(CupertinoIcons.person),

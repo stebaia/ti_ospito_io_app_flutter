@@ -1,4 +1,6 @@
+import 'package:ti_ospito_io_app_flutter/models/city.dart';
 import 'package:ti_ospito_io_app_flutter/models/place.dart';
+import 'package:ti_ospito_io_app_flutter/models/sos_place.dart';
 import 'package:ti_ospito_io_app_flutter/models/user.dart';
 
 List<User> getFakeData = [
@@ -97,4 +99,65 @@ List<Place> getFakePlaceOspital = [
       address: 'Via Pedrignone, 3, 47822 Santarcangelo di Romagna RN',
       lat: 44.1235417,
       long: 12.1947816)
+];
+
+List<SosPlace> getFakeSosPlace = [
+  SosPlace(
+      date: '26/05',
+      time: '16:00-19:00',
+      activity: 'Pulizia Strade e Immobili',
+      address: 'Via Caprera, 32',
+      notes:
+          'RECARSI DIRETTAMENTE SUL LUOGO DELL\'INTERVENTO MUNITI DI STIVALI, GUANTI',
+      freePlace: 2,
+      city: 'Cesena'),
+  SosPlace(
+      date: '26/05',
+      time: '15:00-19:00',
+      activity: 'Pulizia Strade e Immobili',
+      address: 'Via Eredità, 71',
+      notes:
+          'RECARSI DIRETTAMENTE SUL LUOGO DELL\'INTERVENTO MUNITI DI STIVALI, GUANTI E PALE - referente Porcheddu Giuseppe 328/879273',
+      freePlace: 5,
+      city: 'Cesena'),
+  SosPlace(
+      date: '26/05',
+      time: '14:00-18:00',
+      activity: 'Pulizia Strade e Immobili',
+      address: 'Via Mensa, 925',
+      notes:
+          'RECARSI DIRETTAMENTE SUL LUOGO DELL\'INTERVENTO MUNITI DI STIVALI, GUANTI E PALE - referente signora Bazzocchi Anna Maria 340/9174814',
+      freePlace: 3,
+      city: 'Cesena'),
+  SosPlace(
+      date: '26/05',
+      time: '14:00-18:00',
+      activity: 'Pulizia Strade e Immobili',
+      address: 'Via Ravennate, 6928',
+      notes:
+          'RECARSI DIRETTAMENTE SUL LUOGO DELL\'INTERVENTO MUNITI DI STIVALI, GUANTI E PALE - REFERENTE GENNARO GIACOMO 3495910021',
+      freePlace: 6,
+      city: 'Cesena'),
+  SosPlace(
+      date: '26/05',
+      time: '16:00-19:00',
+      activity: 'Pulizia Strade e Immobili',
+      address: 'Via Caprera, 32',
+      notes:
+          'RECARSI DIRETTAMENTE SUL LUOGO DELL\'INTERVENTO MUNITI DI STIVALI, GUANTI',
+      freePlace: 2,
+      city: 'Cesena'),
+  SosPlace(
+      date: '26/05',
+      time: '14:00-20:00',
+      activity: 'Pulizia Strade e Immobili',
+      address: 'Via Roversano, 84',
+      notes:
+          'RECARSI DIRETTAMENTE SUL LUOGO DELL\'INTERVENTO MUNITI DI STIVALI, GUANTI, PALE, SECCHI E CARIOLE - referente graziani alessandra 3406217846',
+      freePlace: 2,
+      city: 'Cesena')
+];
+
+List<City> getSosPlaceCity = [
+  City(name: 'Cesena', sosPlaceList: getFakeSosPlace)
 ];
