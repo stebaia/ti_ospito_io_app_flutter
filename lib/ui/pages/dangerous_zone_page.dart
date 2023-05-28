@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:ti_ospito_io_app_flutter/ui/components/bottom_sheet_danger.dart';
 
 class DangerousZonePage extends StatefulWidget {
   const DangerousZonePage({super.key});
@@ -59,17 +60,28 @@ class _DangerousZonePageState extends State<DangerousZonePage> {
         SizedBox(
           height: 30,
         ),
-        Container(
-          height: 60,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8), color: Colors.red),
-          width: MediaQuery.of(context).size.width,
-          child: Center(
-              child: Text(
-            'segnala pericolo!'.toUpperCase(),
-            style: TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
-          )),
+        GestureDetector(
+          onTap: () => showModalBottomSheet<void>(
+              isScrollControlled: true,
+              backgroundColor: Colors.transparent,
+              context: context,
+              builder: (BuildContext context) {
+                return BottomSheetDangerWidget();
+              }),
+          child: Container(
+            height: 60,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8), color: Colors.red),
+            width: MediaQuery.of(context).size.width,
+            child: Center(
+                child: Text(
+              'segnala pericolo!'.toUpperCase(),
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18),
+            )),
+          ),
         )
       ]),
     )));
